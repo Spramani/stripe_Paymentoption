@@ -36,6 +36,12 @@
                                     <action selector="payment:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Kx-3g-fih"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelasdasda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jig-Yj-NtQ">
+                                <rect key="frame" x="154.5" y="437.5" width="105.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -44,11 +50,16 @@
                             <constraint firstItem="iru-u5-ZJ6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Cry-B9-2lJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3FV-QL-mSv" secondAttribute="trailing" constant="20" id="NmV-px-CLL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iru-u5-ZJ6" secondAttribute="trailing" constant="30" id="RaI-gV-3Wg"/>
+                            <constraint firstItem="Jig-Yj-NtQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SjS-cn-sxH"/>
                             <constraint firstItem="iru-u5-ZJ6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="73" id="avW-nt-9lv"/>
                             <constraint firstItem="3FV-QL-mSv" firstAttribute="top" secondItem="iru-u5-ZJ6" secondAttribute="bottom" constant="15" id="rkj-Kb-9Gt"/>
+                            <constraint firstItem="Jig-Yj-NtQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tpk-3g-fJT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U6k-TA-vqq"/>
+                    <connections>
+                        <outlet property="payment_method_lbl" destination="Jig-Yj-NtQ" id="kYl-Xn-wwC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

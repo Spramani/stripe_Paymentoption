@@ -14,76 +14,94 @@ import Alamofire
 
 class StripeAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
     
+    enum APIError: Error {
+        case unknown
+        
+        var localizedDescription: String {
+            switch self {
+            case .unknown:
+                return "Unknown error"
+            }
+        }
+    }
+    
     static let sharedClient = StripeAPIClient()
     var emphemeralKey = [AnyHashable : Any]()
     func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {
-  
-        let headers: HTTPHeaders = ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMmI1NmVlMjA0MWExY2M3OGY0NDk0N2E2MjJkYTdhYmVkYjgxYmZlOGU5N2FmMjM1YTNhMzExMDljNTE3OTM5NDVhNDJiMDk2Y2FmNDI3MTUiLCJpYXQiOjE2MTQ3NjM1MTQsIm5iZiI6MTYxNDc2MzUxNCwiZXhwIjoxNjQ2Mjk5NTE0LCJzdWIiOiI5MiIsInNjb3BlcyI6W119.GNX0mDs5b4LmEffeDUtwFWCfG0h9JEe-LarHPeMY_x217LROsVBL4yYB4DExHsRYhYFE_gTT0eixG89rz9P3G68d7KImcaHNTqvX-mM94HcKiUPk0jcSTJwG918tvTGB_5r2Yn9EOGPvGPCRHpKtZRHjALFngMIY-WFdpDRJFMt1rNsmErnxXwc-qmvgpoOeeuzf7UCsnFWQOVxVQoRBxRwT9CMO4bTny8XPnPw7vfOhjoVR3o4ecQn8XxGnFJ4AOyZWIqPwn1ai-Hv7K4htvGGK9c9uHL9Kd8qCEo5UQ5h4WG1nyQiDnCSVadUzDOHheTTeNZdkqbMDKKSv41CDvjG2-N09JfvGZ-w2pDimcvhrq1K0qpk2u_alg3uN61usdn2qAkTrCcbRnC4kVmhlqxHZLbuUIDtPy2orGlCpMWX9FIUYJBnbkEi4eqYJbjlqi4aT-C4m0f_dwA6Ir_fOmWOfXh0Q6F8W4i8MF6lv4-BbhTfG8QThxg0xBRu0siEXTc1--47GsEyoJS0SrG-_OyWchfpTyiGqqnHNcB__K4qrzHqJ5_VlMDKsHJLq2KPcOJdEXBJNrt0StbCP5YMsOL5Jbm9EU58GgmdnjIjI8-Ffz0rR2k4zlL65YbLTOCvhP3X_sa8TqR3JlQ8sOJF2xIXRksKc5eynZZKKv53NAHY", "Content-type": "application/json"]
         
-        AF.request("https://adsumoriginator.com/seng/api/token/cus_J2uQ7gBy5yOnt0", method: .get, parameters: nil,encoding: JSONEncoding.default, headers: headers).responseJSON { [self]
+        let headers: HTTPHeaders = ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjRlMjk0ZWIxZjY4OTJjNzQ3NDJkZTM1NjQyOTJkMmE3YmQ5ZGZmOTkwNzc0YWMwZjQ5ODVhMTY5MDJiMjE1MTJiMWMwY2RmOTA3NWNjZDUiLCJpYXQiOjE2MTQ4NTU0MDYsIm5iZiI6MTYxNDg1NTQwNiwiZXhwIjoxNjQ2MzkxNDA2LCJzdWIiOiIxMDQiLCJzY29wZXMiOltdfQ.YgAmiMP-6mWZVzE3BQsTqbxkwG6DcVjvG2rRD1utKGnd842zp_7PgnVaOVnXyPvaWbwGC6XIlCflt0tT1JCHq-ziKyP92Ofbq_dDYZPC1adefTrNYokykY8AgJEWWJz47B_bdc5YiJm1F4iSML2GjjtjQ9_AZS5BwTJctbCLPFzhlfSkUDLQbqbn9WW8gapWQ54gbwMx083igHQVQb0QBSW5H3sgPAnMvtHM0_ujUKbcTYRd_OyvxC78uMR0Cd4-7RU_4JliJ8hKurMUmpAL8JkYzTDD7WEdvcE6GL-GZDBlw-iBkGB__ltJQGvnljTF3L_k3-K-kGSeadyY73AObzGdZkxY_pP8p8Xyo9gts2BgG1r3e2SKi-jGVouNWs1qbNSh4IcXIoYcz_pi0F8Og63ojroVIX8iHMIzoryeaafvBE5K_O8pSvizjsBOcRTQLOysY6T4q1uzaC5QxxRF9dgqlTGUvCYt-zj_psCHPfMU7x2uShCJFQx6ZBYxwvR9r2kGKZ-kz2oODgcLq5YYXJ0Yij_xN0PVOUkMsNCKi6h64KjiB7wl4yYp9RzO050YrkeA1IVWxpOoQxndkeW2Xga61noAXk6gy6YaT2dZL3F8YWTo39PMRKVnJ62lqfC6UjRx64TNhn7PzWaKvrWL8r0gOqwDKXjS3dJY-Vy-eWA    ", "Content-type": "application/json"]
+        
+        AF.request("https://adsumoriginator.com/seng/api/token/cus_J3FUiPJVgAQ4AR", method: .get, parameters: nil,encoding: JSONEncoding.default, headers: headers).responseJSON { [self]
             response in
             
+            if let data = response.data {
+                do {
+                    let userresponse = try JSONDecoder().decode(keydata.self, from: data)
+                    print(userresponse.data.secret!)
+                    UserDefaults.standard.set(userresponse.data.secret!, forKey: "secretkey")
+                } catch _ {
+                    print("Error")
+                }
+            }
             
             
-            let value = response.value as! NSDictionary
-           
-            let datas = value["data"]!
-            print(datas)
-          
             
-            self.emphemeralKey = datas as! [AnyHashable : Any]
-            completion(self.emphemeralKey, nil)
+            if let value = response.value as? NSDictionary {
+                
+                let datas = value["data"]!
+                print(datas)
+                self.emphemeralKey = datas as! [AnyHashable : Any]
+                completion(self.emphemeralKey, nil)
+            }
+            else {
+                print("Value nill")
+            }
+            
+            
         }
         
     }
     
-    
+
     func createPaymentIntent(_ completion: @escaping ((Result<String, Error>) -> Void)) {
-        
-//        let itemAry = NSMutableArray()
-//        for c in cart.data {
-//            let dict = NSMutableDictionary()
-//            dict.setValue("\(c.count)", forKey: "count")
-//            dict.setValue("\(c.id)", forKey: "itemRef")
-//            if c.itemType == 0 {
-//                dict.setValue("BAR", forKey: "itemType")
-//            }else{
-//                dict.setValue("KITCHEN", forKey: "itemType")
-//            }
-//            dict.setValue("\(c.name)", forKey: "itemName")
-//            dict.setValue("\(c.price)", forKey: "itemPrice")
-//            itemAry.add(dict)
-//        }
-//        var id = ""
-//        if let associatedAry = emphemeralKey["associated_objects"] as? NSArray, associatedAry.count > 0 {
-//            id = "\((associatedAry.object(at: 0) as AnyObject).value(forKey: "id")!)"
-//        }
-//        let params = [
-//            "country":"GB",
-//            "customer_ref":id,
-//            "tip":"\(cart.tip)",
-//            "customerOrderMenu":itemAry
-//            ] as [String : Any]
-//        print(params)
-//        AF.request("\(BASE_URL)clientSecretKey?access_token=\(accessToken)", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { (response) in
-//            print(response.value)
-//            print(response.error)
-//            if response.error != nil {
-//                completion(.failure(response.error ?? APIError.unknown))
-//            }else{
-//                let responseDict = response.value as! NSDictionary
-//                let status = responseDict.value(forKey: "status") as! Bool
-//                if status {
-//                    if let secret = responseDict.value(forKey: "data") as? String, !secret.isEmpty {
-//                        completion(.success(secret))
-//                    }else{
-//                        completion(.failure(APIError.unknown))
-//                    }
-//                }else{
-//                    completion(.failure(APIError.unknown))
-//                }
-//            }
-//        }
+
+
+
+        var id = ""
+        if let associatedAry = emphemeralKey["associated_objects"] as? NSArray, associatedAry.count > 0 {
+            id = "\((associatedAry.object(at: 0) as AnyObject).value(forKey: "id")!)"
+        }
+        let params = [
+            "customer_id": id,
+            "pool_id": 81,
+            "amount": "150",
+            "currency": "Eur",
+            "description": "archana.travel",
+            "payment_method": "pm_card_us"
+        ] as [String : Any]
+
+        let headers: HTTPHeaders = ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjRlMjk0ZWIxZjY4OTJjNzQ3NDJkZTM1NjQyOTJkMmE3YmQ5ZGZmOTkwNzc0YWMwZjQ5ODVhMTY5MDJiMjE1MTJiMWMwY2RmOTA3NWNjZDUiLCJpYXQiOjE2MTQ4NTU0MDYsIm5iZiI6MTYxNDg1NTQwNiwiZXhwIjoxNjQ2MzkxNDA2LCJzdWIiOiIxMDQiLCJzY29wZXMiOltdfQ.YgAmiMP-6mWZVzE3BQsTqbxkwG6DcVjvG2rRD1utKGnd842zp_7PgnVaOVnXyPvaWbwGC6XIlCflt0tT1JCHq-ziKyP92Ofbq_dDYZPC1adefTrNYokykY8AgJEWWJz47B_bdc5YiJm1F4iSML2GjjtjQ9_AZS5BwTJctbCLPFzhlfSkUDLQbqbn9WW8gapWQ54gbwMx083igHQVQb0QBSW5H3sgPAnMvtHM0_ujUKbcTYRd_OyvxC78uMR0Cd4-7RU_4JliJ8hKurMUmpAL8JkYzTDD7WEdvcE6GL-GZDBlw-iBkGB__ltJQGvnljTF3L_k3-K-kGSeadyY73AObzGdZkxY_pP8p8Xyo9gts2BgG1r3e2SKi-jGVouNWs1qbNSh4IcXIoYcz_pi0F8Og63ojroVIX8iHMIzoryeaafvBE5K_O8pSvizjsBOcRTQLOysY6T4q1uzaC5QxxRF9dgqlTGUvCYt-zj_psCHPfMU7x2uShCJFQx6ZBYxwvR9r2kGKZ-kz2oODgcLq5YYXJ0Yij_xN0PVOUkMsNCKi6h64KjiB7wl4yYp9RzO050YrkeA1IVWxpOoQxndkeW2Xga61noAXk6gy6YaT2dZL3F8YWTo39PMRKVnJ62lqfC6UjRx64TNhn7PzWaKvrWL8r0gOqwDKXjS3dJY-Vy-eWA    ", "Content-type": "application/json"]
+
+        print(params)
+                AF.request("https://adsumoriginator.com/seng/api/paymentIntent", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                    print(response.value)
+                    print(response.error)
+                    if response.error != nil {
+                        completion(.failure(response.error ?? APIError.unknown))
+                    }else{
+                        let responseDict = response.value as! NSDictionary
+                        let status = responseDict.value(forKey: "status") as! Bool
+                        if status {
+                            if let secret = responseDict.value(forKey: "data") as? String, !secret.isEmpty {
+                                completion(.success(secret))
+                            }else{
+                                completion(.failure(APIError.unknown))
+                            }
+                        }else{
+                            completion(.failure(APIError.unknown))
+                        }
+                    }
+                }
     }
 }
 

