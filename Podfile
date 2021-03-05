@@ -6,7 +6,8 @@ target 'stripe_Paymentoption' do
   use_frameworks!
 
   # Pods for stripe_Paymentoption
-		pod 'Alamofire', '~> 5.2'
+	pod 'Alamofire', '~> 5.2'
  	pod 'Stripe'
+
 
 end

@@ -14,6 +14,8 @@ import Alamofire
 
 class StripeAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
     
+    
+   
     enum APIError: Error {
         case unknown
         
@@ -29,9 +31,10 @@ class StripeAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
     var emphemeralKey = [AnyHashable : Any]()
     func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {
         
-        let headers: HTTPHeaders = ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjRlMjk0ZWIxZjY4OTJjNzQ3NDJkZTM1NjQyOTJkMmE3YmQ5ZGZmOTkwNzc0YWMwZjQ5ODVhMTY5MDJiMjE1MTJiMWMwY2RmOTA3NWNjZDUiLCJpYXQiOjE2MTQ4NTU0MDYsIm5iZiI6MTYxNDg1NTQwNiwiZXhwIjoxNjQ2MzkxNDA2LCJzdWIiOiIxMDQiLCJzY29wZXMiOltdfQ.YgAmiMP-6mWZVzE3BQsTqbxkwG6DcVjvG2rRD1utKGnd842zp_7PgnVaOVnXyPvaWbwGC6XIlCflt0tT1JCHq-ziKyP92Ofbq_dDYZPC1adefTrNYokykY8AgJEWWJz47B_bdc5YiJm1F4iSML2GjjtjQ9_AZS5BwTJctbCLPFzhlfSkUDLQbqbn9WW8gapWQ54gbwMx083igHQVQb0QBSW5H3sgPAnMvtHM0_ujUKbcTYRd_OyvxC78uMR0Cd4-7RU_4JliJ8hKurMUmpAL8JkYzTDD7WEdvcE6GL-GZDBlw-iBkGB__ltJQGvnljTF3L_k3-K-kGSeadyY73AObzGdZkxY_pP8p8Xyo9gts2BgG1r3e2SKi-jGVouNWs1qbNSh4IcXIoYcz_pi0F8Og63ojroVIX8iHMIzoryeaafvBE5K_O8pSvizjsBOcRTQLOysY6T4q1uzaC5QxxRF9dgqlTGUvCYt-zj_psCHPfMU7x2uShCJFQx6ZBYxwvR9r2kGKZ-kz2oODgcLq5YYXJ0Yij_xN0PVOUkMsNCKi6h64KjiB7wl4yYp9RzO050YrkeA1IVWxpOoQxndkeW2Xga61noAXk6gy6YaT2dZL3F8YWTo39PMRKVnJ62lqfC6UjRx64TNhn7PzWaKvrWL8r0gOqwDKXjS3dJY-Vy-eWA    ", "Content-type": "application/json"]
-        
-        AF.request("https://adsumoriginator.com/seng/api/token/cus_J3FUiPJVgAQ4AR", method: .get, parameters: nil,encoding: JSONEncoding.default, headers: headers).responseJSON { [self]
+   
+        let headers: HTTPHeaders = ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODJkOWZiZGQzMjBhZjkwNWQzYTUyNTMwYTc2NjhiN2E2NmVkMDMzMjI0ZDkzYzYxOWQzOTVmYjI0MTFhY2RkOWQ3ODhkNTc5MmQzNTQwMTciLCJpYXQiOjE2MTQ5NDMwOTAsIm5iZiI6MTYxNDk0MzA5MCwiZXhwIjoxNjQ2NDc5MDkwLCJzdWIiOiI5MCIsInNjb3BlcyI6W119.bSHaGhmj01wZVHUXyv3eGutDYHj1woBYxndpq6Fro9HCLeiTeXug_q8SbbsC5YM2-6XninZxYRcndR3GXFXxmNdGKrJ9QwvmgxuS3Cym5_9UJCqcjup_1imeq-tdHrd517sLg7lQI6im5x8OcS2pM4quxGBGAwLQWRCBDvvVchEvU1H1muOuuK1a5uCAQv3FsBsEDB67i_JMNA3JrB3B0GpRCDIcNLCBSZkwkOl7jpaFdcDT3cYFCU_Bfc_8ypOxOkfmVUx_oa9Fel1zitVempKnoR3N7qiOZpvdqu8yb2LLhVYmQEvSSghIlOIveTyJeQPJt0SDMPtUB-gG9FfTkOW0iyGHg4HLIyFLePTGxN54nfYFEStkggslpm-FVBTjqRmsotURXSUm_TAmPXJbaJGMSin96UJJfKF1P_4L87EXzttH0YJdlA8tgitDlJezA6HDEGbahPnx8QzFxnZU6Ibf6qRW_kidIPc7hXy4--N6FnSFVgBNp_LsbDlpf7Ej86vy9_a0R1dYHiEamDmFbe9mQrggjoH31Pizpnvauisl2shcAjTd6DkOEtsQgdVCpLB6bzz0fVMqCpP1HTEnK6DDEAT7dGFqWqOJtRXhKYZUl6UbtFV2j9OifXDOLGlNCqO3ZYYk-Q8OCAW5vEhRIpeHczEg482eufF7rF1okGo", "Content-type": "application/json"]
+
+        AF.request("https://adsumoriginator.com/seng/api/token/cus_J2uQ7gBy5yOnt0", method: .get, parameters: nil,encoding: JSONEncoding.default, headers: headers).responseJSON { [self]
             response in
             
             if let data = response.data {
@@ -72,28 +75,30 @@ class StripeAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
             id = "\((associatedAry.object(at: 0) as AnyObject).value(forKey: "id")!)"
         }
         let params = [
-            "customer_id": id,
-            "pool_id": 81,
-            "amount": "150",
-            "currency": "Eur",
-            "description": "archana.travel",
-            "payment_method": "pm_card_us"
+              "customer_id": "cus_J2uQ7gBy5yOnt0",
+              "pool_id": 92,
+              "amount": "100",
+              "currency": "eur",
+              "description": "pools described",
+              "payment_method": "card"
         ] as [String : Any]
 
-        let headers: HTTPHeaders = ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjRlMjk0ZWIxZjY4OTJjNzQ3NDJkZTM1NjQyOTJkMmE3YmQ5ZGZmOTkwNzc0YWMwZjQ5ODVhMTY5MDJiMjE1MTJiMWMwY2RmOTA3NWNjZDUiLCJpYXQiOjE2MTQ4NTU0MDYsIm5iZiI6MTYxNDg1NTQwNiwiZXhwIjoxNjQ2MzkxNDA2LCJzdWIiOiIxMDQiLCJzY29wZXMiOltdfQ.YgAmiMP-6mWZVzE3BQsTqbxkwG6DcVjvG2rRD1utKGnd842zp_7PgnVaOVnXyPvaWbwGC6XIlCflt0tT1JCHq-ziKyP92Ofbq_dDYZPC1adefTrNYokykY8AgJEWWJz47B_bdc5YiJm1F4iSML2GjjtjQ9_AZS5BwTJctbCLPFzhlfSkUDLQbqbn9WW8gapWQ54gbwMx083igHQVQb0QBSW5H3sgPAnMvtHM0_ujUKbcTYRd_OyvxC78uMR0Cd4-7RU_4JliJ8hKurMUmpAL8JkYzTDD7WEdvcE6GL-GZDBlw-iBkGB__ltJQGvnljTF3L_k3-K-kGSeadyY73AObzGdZkxY_pP8p8Xyo9gts2BgG1r3e2SKi-jGVouNWs1qbNSh4IcXIoYcz_pi0F8Og63ojroVIX8iHMIzoryeaafvBE5K_O8pSvizjsBOcRTQLOysY6T4q1uzaC5QxxRF9dgqlTGUvCYt-zj_psCHPfMU7x2uShCJFQx6ZBYxwvR9r2kGKZ-kz2oODgcLq5YYXJ0Yij_xN0PVOUkMsNCKi6h64KjiB7wl4yYp9RzO050YrkeA1IVWxpOoQxndkeW2Xga61noAXk6gy6YaT2dZL3F8YWTo39PMRKVnJ62lqfC6UjRx64TNhn7PzWaKvrWL8r0gOqwDKXjS3dJY-Vy-eWA    ", "Content-type": "application/json"]
+        let headers: HTTPHeaders = ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODJkOWZiZGQzMjBhZjkwNWQzYTUyNTMwYTc2NjhiN2E2NmVkMDMzMjI0ZDkzYzYxOWQzOTVmYjI0MTFhY2RkOWQ3ODhkNTc5MmQzNTQwMTciLCJpYXQiOjE2MTQ5NDMwOTAsIm5iZiI6MTYxNDk0MzA5MCwiZXhwIjoxNjQ2NDc5MDkwLCJzdWIiOiI5MCIsInNjb3BlcyI6W119.bSHaGhmj01wZVHUXyv3eGutDYHj1woBYxndpq6Fro9HCLeiTeXug_q8SbbsC5YM2-6XninZxYRcndR3GXFXxmNdGKrJ9QwvmgxuS3Cym5_9UJCqcjup_1imeq-tdHrd517sLg7lQI6im5x8OcS2pM4quxGBGAwLQWRCBDvvVchEvU1H1muOuuK1a5uCAQv3FsBsEDB67i_JMNA3JrB3B0GpRCDIcNLCBSZkwkOl7jpaFdcDT3cYFCU_Bfc_8ypOxOkfmVUx_oa9Fel1zitVempKnoR3N7qiOZpvdqu8yb2LLhVYmQEvSSghIlOIveTyJeQPJt0SDMPtUB-gG9FfTkOW0iyGHg4HLIyFLePTGxN54nfYFEStkggslpm-FVBTjqRmsotURXSUm_TAmPXJbaJGMSin96UJJfKF1P_4L87EXzttH0YJdlA8tgitDlJezA6HDEGbahPnx8QzFxnZU6Ibf6qRW_kidIPc7hXy4--N6FnSFVgBNp_LsbDlpf7Ej86vy9_a0R1dYHiEamDmFbe9mQrggjoH31Pizpnvauisl2shcAjTd6DkOEtsQgdVCpLB6bzz0fVMqCpP1HTEnK6DDEAT7dGFqWqOJtRXhKYZUl6UbtFV2j9OifXDOLGlNCqO3ZYYk-Q8OCAW5vEhRIpeHczEg482eufF7rF1okGo", "Content-type": "application/json"]
 
         print(params)
-                AF.request("https://adsumoriginator.com/seng/api/paymentIntent", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                AF.request("https://adsumoriginator.com/seng/api/paymentIntentToken", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                     print(response.value)
                     print(response.error)
                     if response.error != nil {
                         completion(.failure(response.error ?? APIError.unknown))
                     }else{
                         let responseDict = response.value as! NSDictionary
-                        let status = responseDict.value(forKey: "status") as! Bool
-                        if status {
-                            if let secret = responseDict.value(forKey: "data") as? String, !secret.isEmpty {
-                                completion(.success(secret))
+                        let status = responseDict.value(forKey: "status")
+                        if (status != nil) == true {
+                            if let secret = responseDict.value(forKey: "data") as? NSDictionary {
+                                let Payment_secretkey = secret.value(forKey: "clientSecret")
+                                
+                                completion(.success(Payment_secretkey as! String))
                             }else{
                                 completion(.failure(APIError.unknown))
                             }

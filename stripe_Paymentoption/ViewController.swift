@@ -7,6 +7,7 @@
 
 import UIKit
 import Stripe
+import Alamofire
 
 class ViewController: UIViewController, STPPaymentContextDelegate {
     
@@ -85,9 +86,9 @@ class ViewController: UIViewController, STPPaymentContextDelegate {
             switch result {
             case .success(let clientSecret):
 //
-                let clientSecret = UserDefaults.standard.string(forKey: "secretkey")
-                self.clientsecret = clientSecret!
-                let paymentIntentParams = STPPaymentIntentParams(clientSecret: clientSecret!)
+//                let clientSecret = UserDefaults.standard.string(forKey: "secretkey")
+                self.clientsecret = clientSecret
+                let paymentIntentParams = STPPaymentIntentParams(clientSecret: clientSecret)
                 paymentIntentParams.configure(with: paymentResult)
                 paymentIntentParams.returnURL = "payments-example://stripe-redirect"
                 STPPaymentHandler.shared().confirmPayment(paymentIntentParams, with: paymentContext) { status, paymentIntent, error in
@@ -125,7 +126,7 @@ class ViewController: UIViewController, STPPaymentContextDelegate {
             title = "Error"
             message = error?.localizedDescription ?? ""
         case .success:
-            //            placeOrder()
+               Confirmpayment()
             return()
         case .userCancellation:
             return()
@@ -156,6 +157,52 @@ class ViewController: UIViewController, STPPaymentContextDelegate {
         //        paymentContext.paymentCurrency = "gbp"
         //        paymentContext.paymentCountry = ""
         
+    }
+    
+    func Confirmpayment() {
+        
+        
+        let params = [
+            "customer_id": "string",
+              "pool_id": 92,
+              "amount": "100",
+              "currency": "eur",
+              "description": "pools described",
+//              "payment_method_types": "card",
+              "payment_id": paymentIntentId,
+            
+        
+                "clientSecret":clientsecret,
+                "paymentIntentId":paymentIntentId,
+                "paymentMethodId":paymentMethodId,
+              
+                
+            ] as [String : Any]
+        print(params)
+        
+        AF.request("https://adsumoriginator.com/seng/api/payments", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { [self] (response) in
+//            print(String(data: response.data!, encoding: .utf8))
+//            self.paymentInProgress = false
+            if response.error != nil {
+//                showToast(response.error?.localizedDescription ?? internetMsg)
+                print("errr message show")
+            }else{
+//                print(response.value)
+//                print(response.error)
+                let responseDict = response.value as! NSDictionary
+                let status = responseDict.value(forKey: "status")
+                if (status != nil) == true {
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "successViewController") as! successViewController
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }else{
+                    showToast(responseDict.value(forKey: "message") as! String)
+                }
+            }
+        }
+    }
+    func showToast(_ message: String) {
+        let windows = UIApplication.shared.windows
+       // windows.last?.makeToast(message)
     }
 
 }
