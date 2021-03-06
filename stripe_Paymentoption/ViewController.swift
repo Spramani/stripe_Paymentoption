@@ -24,18 +24,18 @@ class ViewController: UIViewController, STPPaymentContextDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //when page laod first call this methode in stripe
         initialisePayment()
     }
     
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        //        self.navigationController?.isNavigationBarHidden = true
-    }
-    
+   
     
     @IBAction func addcart(_ sender: UIButton) {
-        //        self.navigationController?.isNavigationBarHidden = false
+      
+        //pushPaymentOptionsViewController() methode use to add , and edit card in strip payment methode
         paymentContext.pushPaymentOptionsViewController()
     }
     
@@ -46,10 +46,11 @@ class ViewController: UIViewController, STPPaymentContextDelegate {
             if paymentMethodId.isEmpty {
                 paymentContext.requestPayment()
             }else{
-                //  placeOrder()
+                Confirmpayment()
             }
         }else{
-            // showToast("Please select payment method")
+            paymentContext.pushPaymentOptionsViewController()
+             showToast("Please select payment method")
         }
         
         
@@ -63,8 +64,7 @@ class ViewController: UIViewController, STPPaymentContextDelegate {
             payment_method_lbl.text = "Add Payment Method"
         }
         isPaymentMethodSelected = paymentContext.selectedPaymentOption != nil
-        //        pay_btn.isEnabled = paymentContext.selectedPaymentOption != nil
-        //        pay_back_view.backgroundColor = (pay_btn.isEnabled ? UIColor(red: 245.0/255.0, green: 132.0/255.0, blue: 28.0/255.0, alpha: 1.0) : UIColor.darkGray)
+      
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
@@ -85,8 +85,7 @@ class ViewController: UIViewController, STPPaymentContextDelegate {
         apiClient.createPaymentIntent { (result) in
             switch result {
             case .success(let clientSecret):
-//
-//                let clientSecret = UserDefaults.standard.string(forKey: "secretkey")
+
                 self.clientsecret = clientSecret
                 let paymentIntentParams = STPPaymentIntentParams(clientSecret: clientSecret)
                 paymentIntentParams.configure(with: paymentResult)
@@ -147,23 +146,25 @@ class ViewController: UIViewController, STPPaymentContextDelegate {
         let config = STPPaymentConfiguration.shared
         
         
-        let theme = STPTheme()
+        let theme = STPTheme()    // its set stripe methode theme
         theme.accentColor = UIColor(red: 245.0/255.0, green: 132.0/255.0, blue: 28.0/255.0, alpha: 1.0)
         paymentContext = STPPaymentContext(customerContext: customerContext,configuration: config,theme: theme)
         paymentContext.delegate = self
-        paymentContext.hostViewController = self
-        paymentContext.paymentAmount = Int(3200)
+        paymentContext.hostViewController = self       // hostviewcontroller its bydefault create controller in stripe use to add card method
+        paymentContext.paymentAmount = Int(10000)
         
         //        paymentContext.paymentCurrency = "gbp"
         //        paymentContext.paymentCountry = ""
         
     }
     
+    
+    
     func Confirmpayment() {
         
         
         let params = [
-            "customer_id": "string",
+            "customer_id": "cus_J3zJuyYg2GbqnZ",
               "pool_id": 92,
               "amount": "100",
               "currency": "eur",

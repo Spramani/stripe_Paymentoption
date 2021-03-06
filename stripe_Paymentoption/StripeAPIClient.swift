@@ -32,16 +32,16 @@ class StripeAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
     func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {
         
    
-        let headers: HTTPHeaders = ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODJkOWZiZGQzMjBhZjkwNWQzYTUyNTMwYTc2NjhiN2E2NmVkMDMzMjI0ZDkzYzYxOWQzOTVmYjI0MTFhY2RkOWQ3ODhkNTc5MmQzNTQwMTciLCJpYXQiOjE2MTQ5NDMwOTAsIm5iZiI6MTYxNDk0MzA5MCwiZXhwIjoxNjQ2NDc5MDkwLCJzdWIiOiI5MCIsInNjb3BlcyI6W119.bSHaGhmj01wZVHUXyv3eGutDYHj1woBYxndpq6Fro9HCLeiTeXug_q8SbbsC5YM2-6XninZxYRcndR3GXFXxmNdGKrJ9QwvmgxuS3Cym5_9UJCqcjup_1imeq-tdHrd517sLg7lQI6im5x8OcS2pM4quxGBGAwLQWRCBDvvVchEvU1H1muOuuK1a5uCAQv3FsBsEDB67i_JMNA3JrB3B0GpRCDIcNLCBSZkwkOl7jpaFdcDT3cYFCU_Bfc_8ypOxOkfmVUx_oa9Fel1zitVempKnoR3N7qiOZpvdqu8yb2LLhVYmQEvSSghIlOIveTyJeQPJt0SDMPtUB-gG9FfTkOW0iyGHg4HLIyFLePTGxN54nfYFEStkggslpm-FVBTjqRmsotURXSUm_TAmPXJbaJGMSin96UJJfKF1P_4L87EXzttH0YJdlA8tgitDlJezA6HDEGbahPnx8QzFxnZU6Ibf6qRW_kidIPc7hXy4--N6FnSFVgBNp_LsbDlpf7Ej86vy9_a0R1dYHiEamDmFbe9mQrggjoH31Pizpnvauisl2shcAjTd6DkOEtsQgdVCpLB6bzz0fVMqCpP1HTEnK6DDEAT7dGFqWqOJtRXhKYZUl6UbtFV2j9OifXDOLGlNCqO3ZYYk-Q8OCAW5vEhRIpeHczEg482eufF7rF1okGo", "Content-type": "application/json"]
+        let headers: HTTPHeaders = ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzBiMjliYWI2M2EyYjViOTE2NDU0ZTRhNTk2ZGM1YTA3ZTRmZWE2ZWVmNjYzZmM4MzRkYjQ2MDM0YjEwOWQzNTM4YzQxNWI4NTEyOWM1MzQiLCJpYXQiOjE2MTUwMDQ5MDUsIm5iZiI6MTYxNTAwNDkwNSwiZXhwIjoxNjQ2NTQwOTA1LCJzdWIiOiIxMTYiLCJzY29wZXMiOltdfQ.MDDS1ExOf_u_WYrMXmRYeMGPk6ov1gO-f_5f9wvla8ziYvO7EQ-6nWcNj0sgVmd7aKx0hy5WR9X6n7Ji7v_F8JiSCw9v6q53h4pwfQSBKdtwlqDWPGmFKJLlxOM5spPcWyFiNa5udveRMUl5S-j-p9v7sD9D4reBwxyeZ0r-CNNQDuCyHrCRlHryhnbLYzj70MaNPqhOEARrEnd99uXwGcwp9sFGK3AqiY2Rw_yW9cY5H3EM-ik-2LwxFGKX_gDxdrqqrm9XuPO-eIAMSXEJi3kPfMwBIegcxJpJf8sVdKsBn4p1v7JsWPsuEvDHgMaU3DulPdXQhG0rHYBDtYvaaLGm6WH_lwTdLGEbxWQ8ShgcAA52-ckCWy-nJFCp3pnstcyKdF57sqveddqHEThy6zBSFxrlgUvOGNQVBIQc9qKHMUUrHNB0Tg--wcyzbHgEdfjilyvIWGJPNDcIDGPlt5vWQfPPkoSoBNXkoOwcb-l0vgDONhfz3aknIA9AdbDQjGEl-tsJwC0aPpA3tNP7SBwo5fwnUHJhtcCc9HhOMwfbIOWCnHmO4ItY_DEYiLuwTIa54vyaSnPx-P8tFqWfhtN1AfueV5GpU52H6Q2iw2bCuK8a9LVJxeh0TTrf_DACEVx8MCisxGwRT9sN9ufc0ZGAo5OypJbzC4tL1N70DrA", "Content-type": "application/json"]
 
-        AF.request("https://adsumoriginator.com/seng/api/token/cus_J2uQ7gBy5yOnt0", method: .get, parameters: nil,encoding: JSONEncoding.default, headers: headers).responseJSON { [self]
+        AF.request("https://adsumoriginator.com/seng/api/token/cus_J3zJuyYg2GbqnZ", method: .get, parameters: nil,encoding: JSONEncoding.default, headers: headers).responseJSON { [self]
             response in
             
             if let data = response.data {
                 do {
                     let userresponse = try JSONDecoder().decode(keydata.self, from: data)
                     print(userresponse.data.secret!)
-                    UserDefaults.standard.set(userresponse.data.secret!, forKey: "secretkey")
+                
                 } catch _ {
                     print("Error")
                 }
@@ -68,27 +68,25 @@ class StripeAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
 
     func createPaymentIntent(_ completion: @escaping ((Result<String, Error>) -> Void)) {
 
-
-
         var id = ""
         if let associatedAry = emphemeralKey["associated_objects"] as? NSArray, associatedAry.count > 0 {
             id = "\((associatedAry.object(at: 0) as AnyObject).value(forKey: "id")!)"
         }
         let params = [
-              "customer_id": "cus_J2uQ7gBy5yOnt0",
-              "pool_id": 92,
+              "customer_id": id,
+              "pool_id": 93,
               "amount": "100",
               "currency": "eur",
-              "description": "pools described",
+              "description": "describe",
               "payment_method": "card"
         ] as [String : Any]
 
-        let headers: HTTPHeaders = ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODJkOWZiZGQzMjBhZjkwNWQzYTUyNTMwYTc2NjhiN2E2NmVkMDMzMjI0ZDkzYzYxOWQzOTVmYjI0MTFhY2RkOWQ3ODhkNTc5MmQzNTQwMTciLCJpYXQiOjE2MTQ5NDMwOTAsIm5iZiI6MTYxNDk0MzA5MCwiZXhwIjoxNjQ2NDc5MDkwLCJzdWIiOiI5MCIsInNjb3BlcyI6W119.bSHaGhmj01wZVHUXyv3eGutDYHj1woBYxndpq6Fro9HCLeiTeXug_q8SbbsC5YM2-6XninZxYRcndR3GXFXxmNdGKrJ9QwvmgxuS3Cym5_9UJCqcjup_1imeq-tdHrd517sLg7lQI6im5x8OcS2pM4quxGBGAwLQWRCBDvvVchEvU1H1muOuuK1a5uCAQv3FsBsEDB67i_JMNA3JrB3B0GpRCDIcNLCBSZkwkOl7jpaFdcDT3cYFCU_Bfc_8ypOxOkfmVUx_oa9Fel1zitVempKnoR3N7qiOZpvdqu8yb2LLhVYmQEvSSghIlOIveTyJeQPJt0SDMPtUB-gG9FfTkOW0iyGHg4HLIyFLePTGxN54nfYFEStkggslpm-FVBTjqRmsotURXSUm_TAmPXJbaJGMSin96UJJfKF1P_4L87EXzttH0YJdlA8tgitDlJezA6HDEGbahPnx8QzFxnZU6Ibf6qRW_kidIPc7hXy4--N6FnSFVgBNp_LsbDlpf7Ej86vy9_a0R1dYHiEamDmFbe9mQrggjoH31Pizpnvauisl2shcAjTd6DkOEtsQgdVCpLB6bzz0fVMqCpP1HTEnK6DDEAT7dGFqWqOJtRXhKYZUl6UbtFV2j9OifXDOLGlNCqO3ZYYk-Q8OCAW5vEhRIpeHczEg482eufF7rF1okGo", "Content-type": "application/json"]
+        let headers: HTTPHeaders = ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzBiMjliYWI2M2EyYjViOTE2NDU0ZTRhNTk2ZGM1YTA3ZTRmZWE2ZWVmNjYzZmM4MzRkYjQ2MDM0YjEwOWQzNTM4YzQxNWI4NTEyOWM1MzQiLCJpYXQiOjE2MTUwMDQ5MDUsIm5iZiI6MTYxNTAwNDkwNSwiZXhwIjoxNjQ2NTQwOTA1LCJzdWIiOiIxMTYiLCJzY29wZXMiOltdfQ.MDDS1ExOf_u_WYrMXmRYeMGPk6ov1gO-f_5f9wvla8ziYvO7EQ-6nWcNj0sgVmd7aKx0hy5WR9X6n7Ji7v_F8JiSCw9v6q53h4pwfQSBKdtwlqDWPGmFKJLlxOM5spPcWyFiNa5udveRMUl5S-j-p9v7sD9D4reBwxyeZ0r-CNNQDuCyHrCRlHryhnbLYzj70MaNPqhOEARrEnd99uXwGcwp9sFGK3AqiY2Rw_yW9cY5H3EM-ik-2LwxFGKX_gDxdrqqrm9XuPO-eIAMSXEJi3kPfMwBIegcxJpJf8sVdKsBn4p1v7JsWPsuEvDHgMaU3DulPdXQhG0rHYBDtYvaaLGm6WH_lwTdLGEbxWQ8ShgcAA52-ckCWy-nJFCp3pnstcyKdF57sqveddqHEThy6zBSFxrlgUvOGNQVBIQc9qKHMUUrHNB0Tg--wcyzbHgEdfjilyvIWGJPNDcIDGPlt5vWQfPPkoSoBNXkoOwcb-l0vgDONhfz3aknIA9AdbDQjGEl-tsJwC0aPpA3tNP7SBwo5fwnUHJhtcCc9HhOMwfbIOWCnHmO4ItY_DEYiLuwTIa54vyaSnPx-P8tFqWfhtN1AfueV5GpU52H6Q2iw2bCuK8a9LVJxeh0TTrf_DACEVx8MCisxGwRT9sN9ufc0ZGAo5OypJbzC4tL1N70DrA", "Content-type": "application/json"]
 
-        print(params)
-                AF.request("https://adsumoriginator.com/seng/api/paymentIntentToken", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
-                    print(response.value)
-                    print(response.error)
+            print(params)
+        
+            AF.request("https://adsumoriginator.com/seng/api/paymentIntentToken", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+
                     if response.error != nil {
                         completion(.failure(response.error ?? APIError.unknown))
                     }else{
