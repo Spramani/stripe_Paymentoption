@@ -37,6 +37,7 @@ class ViewController: UIViewController, STPPaymentContextDelegate {
       
         //pushPaymentOptionsViewController() methode use to add , and edit card in strip payment methode
         paymentContext.pushPaymentOptionsViewController()
+        
     }
     
     @IBAction func payment(_ sender: UIButton) {

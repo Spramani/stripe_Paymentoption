@@ -135,7 +135,6 @@
 				103DA5DC7B8A676661B1225F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
-				EAAC50BE5542100E45AAC43A /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
